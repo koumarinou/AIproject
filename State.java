@@ -34,6 +34,15 @@ public class State implements Comparable<State>
 		this.totalTime = s.totalTime;
 		this.lampOnRight = s.lampOnRight;
 	}
+	public int MaxH() { //heuristic finds the max of the right list
+		int maxTime = Integer.MIN_VALUE; //minimum possible value for type int
+		for (int time : RightList) {
+			if (time > maxTime) {
+				maxTime = time;
+			}
+		}
+		return maxTime;
+	}
 	public int getF() 
 	{
 		return this.f;
