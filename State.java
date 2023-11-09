@@ -93,9 +93,10 @@ public class State implements Comparable<State>
 		this.totalTime = time;
 	}
 	
-	public void evaluate() 
+	public void evaluate() //calculate f
 	{
-		//calculate f...
+		this.h=MaxH(); 
+		this.f=this.h+this.g;
 	}
 	
 	public void print() {}
