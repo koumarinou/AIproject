@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 
 public class State implements Comparable<State>
 {
@@ -9,9 +9,11 @@ public class State implements Comparable<State>
 	private List<Integer> LeftList; 
     	private boolean lampOnRight; 
 	List<Integer> initialTimes;
+	
+	
     
 	
-	// constructor
+	//constructor
     	public State(List<Integer> initialTimes) { //takes the times and puts them in RightList
         	this.RightList = new ArrayList<>(initialTimes);
         	this.LeftList = new ArrayList<>();
@@ -21,9 +23,11 @@ public class State implements Comparable<State>
         	this.father = null;
         	this.totalTime = 0;
 		this.lampOnRight=true; //true on right and false on left
+		this.initialTimes=initialTimes;
 
-    	}
-	// copy constructor
+    }
+
+	//copy constructor
 	public State(State s) {
 		this.RightList = new ArrayList<>(s.RightList);
 		this.LeftList = new ArrayList<>(s.LeftList);
@@ -33,7 +37,26 @@ public class State implements Comparable<State>
 		this.father = s.father; 
 		this.totalTime = s.totalTime;
 		this.lampOnRight = s.lampOnRight;
+		this.initialTimes=s.initialTimes;
 	}
+
+
+	public List<Integer> getRightList() {
+        	return new ArrayList<>(RightList);
+    	}	
+
+    	public void setRightList(List<Integer> RightList) {
+        	this.RightList = new ArrayList<>(RightList);
+    	}
+
+    	public List<Integer> getLeftList() {
+        	return new ArrayList<>(LeftList);
+    	}
+
+    	public void setLeftList(List<Integer> LeftList) {
+        	this.LeftList = new ArrayList<>(LeftList);
+    	}
+	
 	public int MaxH() { //heuristic finds the max of the right list
 		int maxTime = Integer.MIN_VALUE; //minimum possible value for type int
 		for (int time : RightList) {
