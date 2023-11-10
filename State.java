@@ -126,7 +126,9 @@ public class State implements Comparable<State>
 	
 	public ArrayList<State> getChildren() {return null;}
 	
-	public boolean isFinal() {return true;}
+	public boolean isFinal() {
+		return RightList.isEmpty() && lampOnRight==false; //if all the persons and the lamp are on the left side
+	} 
 	
 	@Override
 	public boolean equals(Object obj) {return true;}
