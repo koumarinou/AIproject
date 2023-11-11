@@ -189,7 +189,18 @@ public class State implements Comparable<State>
 	} 
 	
 	@Override
-	public boolean equals(Object obj) {return true;}
+	public boolean equals(Object obj) {
+		if (this == obj){ 
+			return true;
+		} 
+		if (obj == null || getClass() != obj.getClass()) {  
+			return false;
+		}
+		State state = (State) obj; 
+		return lampOnRight == state.lampOnRight && 
+				Objects.equals(LeftList, state.LeftList) &&
+				Objects.equals(RightList, state.RightList);
+		}
 	
 	@Override
     public int hashCode() {return 0;}
