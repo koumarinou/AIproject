@@ -203,7 +203,9 @@ public class State implements Comparable<State>
 		}
 	
 	@Override
-    public int hashCode() {return 0;}
+    	public int hashCode() {
+		return Objects.hash(lampOnRight, LeftList, RightList);
+	}
 	
 	@Override
     public int compareTo(State s)
