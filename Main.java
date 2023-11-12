@@ -42,3 +42,4 @@ public class Main {
         OpenList.add(FirstState);
         int sum = initialTimes.stream().mapToInt(Integer::intValue).sum();
     }
+}
