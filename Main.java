@@ -28,4 +28,17 @@ public class Main {
                 System.out.println("The definition: " + args[i] + " is not a valid number.");
                 return;
             }
+        
         }
+        //we create the first state
+        State FirstState=new State(initialTimes);
+        //definition of the end state
+        State EndState=null;
+
+        List<State> OpenList = new ArrayList<>();
+        Set<State> ClosedList = new HashSet<>();
+
+        //add the first state in open list
+        OpenList.add(FirstState);
+        int sum = initialTimes.stream().mapToInt(Integer::intValue).sum();
+    }
