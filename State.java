@@ -122,7 +122,20 @@ public class State implements Comparable<State>
 		this.f=this.h+this.g;
 	}
 	
-	public void print() {}
+	public void print() {
+		StringBuilder output = new StringBuilder();
+	
+		//construct the string for the left side if it is not empty
+		if (!LeftList.isEmpty()) {
+			StringBuilder leftStrBuilder = new StringBuilder("Left side: ");
+			for (Integer time : LeftList) {
+				leftStrBuilder.append(time).append(", ");
+			}
+			//remove the last comma and space.
+			leftStrBuilder.delete(leftStrBuilder.length() - 2, leftStrBuilder.length());
+			output.append(leftStrBuilder).append(" ");
+		}
+	}
 	
 	public ArrayList<State> getChildren() {
     		ArrayList<State> children = new ArrayList<>();
