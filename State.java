@@ -135,7 +135,28 @@ public class State implements Comparable<State>
 			leftStrBuilder.delete(leftStrBuilder.length() - 2, leftStrBuilder.length());
 			output.append(leftStrBuilder).append(" ");
 		}
+
+		//construct the string for the right side if it is not empty
+		if (!RightList.isEmpty()) {
+			StringBuilder rightStrBuilder = new StringBuilder("Right side: ");
+			for (Integer time : RightList) {
+				rightStrBuilder.append(time).append(", ");
+			}
+			//remove the last comma and space
+			rightStrBuilder.delete(rightStrBuilder.length() - 2, rightStrBuilder.length());
+			output.append(rightStrBuilder).append(" ");
+		}
+	
+		//compose the torch position string and append it
+		output.append("Torch position: ").append(lampOnRight ? "Right" : "Left").append(" ");
+	
+		//create the elapsed time string and append it.
+		output.append("Time taken: ").append(this.getG());
+	
+		//output the complete status of the crossing.
+		System.out.println(output);
 	}
+
 	
 	public ArrayList<State> getChildren() {
     		ArrayList<State> children = new ArrayList<>();
