@@ -189,7 +189,7 @@ public class State implements Comparable<State>
 				child.setG(child.getG() + Math.max(item1, item2)); 
 				totalTime+=Math.max(item1, item2);
 				child.lampOnRight = !this.lampOnRight;
-				children.add(child);;
+				children.add(child);
                 	
             		}
         		}
@@ -209,7 +209,7 @@ public class State implements Comparable<State>
 				child.setG(child.getG() + item); 
 				totalTime+=item;
 				child.lampOnRight = !this.lampOnRight;
-            			children.add(child);;
+            			children.add(child);
         		}
     		}
 
