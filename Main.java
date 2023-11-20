@@ -85,5 +85,21 @@ public class Main {
             ClosedList.add(Curr);
 
         }
+        if (EndState != null) {
+            
+            LinkedList<State> path = new LinkedList<>();
+            State current = EndState;
+        
+            // construct the path from end to start 
+            while (current != null) {
+                path.addFirst(current);
+                current = current.getFather();
+            }
+        
+            // iterate through the LinkedList and print each state
+            path.forEach(State::print);
+        }else{
+            System.out.println("Didn t find a solution");
+        }
     }
 }
